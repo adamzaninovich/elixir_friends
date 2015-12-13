@@ -1,5 +1,7 @@
 # ElixirFriends
 
+[![Build Status](https://semaphoreci.com/api/v1/projects/192d372c-4bae-47c8-bd4b-d01e6bd3aeab/633186/badge.svg)](https://semaphoreci.com/adamzaninovich/elixir_friends)
+
 To start your Phoenix app:
 
   1. Install dependencies with `mix deps.get`
