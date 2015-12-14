@@ -1,12 +1,13 @@
-<h2>Listing posts</h2>
+<h2>Listing Tweets</h2>
+<h3><small><%= @page.page_size %> tweets / <%= @page.total_entries %> total</small></h3>
+
+<%= pagination_links @page, next: "→", previous: "←", first: true, last: true %>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Image url</th>
-      <th>Content</th>
-      <th>Source url</th>
-
+      <th>Image</th>
+      <th>Tweet</th>
       <th></th>
     </tr>
   </thead>
@@ -14,19 +15,17 @@
 <%= for post <- @posts do %>
     <tr>
       <td>
-        <img style="max-width: 70px;" src="<%= post.image_url %>" alt="<%= post.image_url %>" />
+        <%= link(to: post.image_url, target: "_blank") do %>
+          <img style="max-width: 70px;" src="<%= post.image_url %>" alt="<%= post.image_url %>" />
+        <% end %>
       </td>
       <td><%= post.content %></td>
-      <td><%= post.source_url %></td>
-
-      <td class="text-right">
-        <%= link "Show", to: post_path(@conn, :show, post), class: "btn btn-default btn-xs" %>
-        <%= link "Edit", to: post_path(@conn, :edit, post), class: "btn btn-default btn-xs" %>
-        <%= link "Delete", to: post_path(@conn, :delete, post), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
-      </td>
+      <td class="text-right"><%= link "tweet →", to: post.source_url, class: "btn btn-primary btn-xs" %></td>
     </tr>
 <% end %>
   </tbody>
 </table>
+
+<%= pagination_links @page, next: "→", previous: "←", first: true, last: true %>
 
 <%= link "New post", to: post_path(@conn, :new), class: "btn btn-default btn-xs" %>

@@ -35,7 +35,12 @@ defmodule ElixirFriends.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.1"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:scrivener, "~> 1.0"},
+     {:scrivener_html, "~> 1.0"},
+     {:extwitter, "~> 0.4"},
+     {:oauth, github: "tim/erlang-oauth"}
+   ]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

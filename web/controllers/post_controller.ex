@@ -5,9 +5,11 @@ defmodule ElixirFriends.PostController do
 
   plug :scrub_params, "post" when action in [:create, :update]
 
-  def index(conn, _params) do
-    posts = Repo.all(Post)
-    render(conn, "index.html", posts: posts)
+  def index(conn, params) do
+    page = Post
+    |> Post.sorted
+    |> Repo.paginate(params)
+    render conn, "index.html", page: page, posts: page.entries
   end
 
   def new(conn, _params) do

@@ -22,4 +22,14 @@ defmodule ElixirFriends.Post do
     model
     |> cast(params, @required_fields, @optional_fields)
   end
+
+  def sorted(query) do
+    from p in query,
+    order_by: [desc: p.inserted_at]
+  end
+
+  def limit(query, number \\ 10) do
+    from p in query,
+    limit: ^number
+  end
 end
