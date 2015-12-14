@@ -1,31 +1,43 @@
-<h2>Listing Tweets</h2>
-<h3><small><%= @page.page_size %> tweets / <%= @page.total_entries %> total</small></h3>
+<div class="row">
+  <div class="column">
+    <h2>TSTweets</h2>
+    <h3><small><%= @page.page_size %> tweets / <%= @page.total_entries %> total</small></h3>
 
-<%= pagination_links @page, next: "→", previous: "←", first: true, last: true %>
+    <%= pagination_links @page, next: "→", previous: "←", first: true, last: true %>
+  </div>
+</div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Tweet</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for post <- @posts do %>
-    <tr>
-      <td>
-        <%= link(to: post.image_url, target: "_blank") do %>
-          <img style="max-width: 70px;" src="<%= post.image_url %>" alt="<%= post.image_url %>" />
-        <% end %>
-      </td>
-      <td><%= post.content %></td>
-      <td class="text-right"><%= link "tweet →", to: post.source_url, class: "btn btn-primary btn-xs" %></td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
+<div class="row">
+  <div class="column">
+    <div class="ui grid">
+      <%= for post <- @page.entries do %>
+        <div class="four wide column">
+          <div class="ui cards">
+            <div class="ui card">
+              <div class="image">
+                <img src="<%= post.image_url %>" />
+              </div>
+              <div class="content">
+                <div class="header">
+                  <%= post.username %>
+                </div>
+                <div class="meta">
+                  <span class="date"><%= post.inserted_at %></span>
+                </div>
+                <div class="description">
+                  <%= post.content %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<%= pagination_links @page, next: "→", previous: "←", first: true, last: true %>
-
-<%= link "New post", to: post_path(@conn, :new), class: "btn btn-default btn-xs" %>
+<div class="row">
+  <div class="column">
+    <%= pagination_links @page, next: "→", previous: "←", first: true, last: true %>
+  </div>
+</div>

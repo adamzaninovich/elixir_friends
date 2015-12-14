@@ -39,7 +39,7 @@ defmodule ElixirFriends.Mixfile do
      {:scrivener, "~> 1.0"},
      {:scrivener_html, "~> 1.0"},
      {:extwitter, "~> 0.4"},
-     {:oauth, github: "tim/erlang-oauth"}
+     {:oauth, github: "tim/erlang-oauth"},
    ]
   end
 
