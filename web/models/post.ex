@@ -34,3 +34,11 @@ defmodule ElixirFriends.Post do
     limit: ^number
   end
 end
+
+defimpl Poison.Encoder, for: ElixirFriends.Post do
+  def encode(post, _options) do
+    post
+    |> Map.take([:image_url, :content, :source_url, :username, :inserted_at])
+    |> Poison.encode!
+  end
+end
