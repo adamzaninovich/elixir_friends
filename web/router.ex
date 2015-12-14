@@ -10,9 +10,9 @@ defmodule ElixirFriends.Router do
   end
 
   scope "/", ElixirFriends do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", PostController, :index
     resources "/posts", PostController
   end
 end
