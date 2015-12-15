@@ -14,7 +14,8 @@ defmodule ElixirFriends do
       # Start the Ecto repository
       worker(ElixirFriends.Repo, []),
       # Here you could define other workers and supervisors as children
-      worker(Task, [fn -> ElixirFriends.ImageTweetStreamer.stream(@term) |> Enum.to_list end])
+      worker(Task, [fn -> ElixirFriends.ImageTweetStreamer.stream(@term) |> Enum.to_list end]),
+      worker(ElixirFriends.DatabaseCleaner, [])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
