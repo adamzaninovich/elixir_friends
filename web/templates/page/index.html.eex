@@ -1,4 +1,4 @@
-<div class="ui masthead piled segments">
+<div class="ui masthead raised segments">
   <div class="ui segment">
     <h1 class="ui header">
       <img class="ui mini circular image" src="/images/taylor.png">
@@ -10,9 +10,13 @@
   </div>
   <div class="ui segment">
     <div id="app" class="row">
-      <h2 class="ui centered header">
-        Nothing to see here...
-      </h2>
+      <div class="ui active inverted dimmer">
+        <div class="ui text loader">Loading some Tay tweets...</div>
+      </div>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
     </div>
   </div>
   <div class="ui segment">

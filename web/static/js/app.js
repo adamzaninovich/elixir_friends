@@ -78,9 +78,9 @@ let Post = React.createClass({
   }
 })
 
-window.onload = () => {
-  let element = document.getElementById("app")
-  React.render(<PostList source="/api/posts" />, element)
-}
+// window.onload = () => {
+//   let element = document.getElementById("app")
+//   React.render(<PostList source="/api/posts" />, element)
+// }
 
 export default App
