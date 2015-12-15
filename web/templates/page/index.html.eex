@@ -9,6 +9,13 @@
     </h1>
   </div>
   <div class="ui segment">
-    <div id="app" class="row"></div>
+    <div id="app" class="row">
+      <h2 class="ui centered header">
+        Nothing to see here...
+      </h2>
+    </div>
+  </div>
+  <div class="ui segment">
+    <img class="ui centered small circular image" src="/images/taylor.png">
   </div>
 </div>
