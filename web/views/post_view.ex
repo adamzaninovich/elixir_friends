@@ -1,7 +1,5 @@
-require IEx
 defmodule ElixirFriends.PostView do
   use ElixirFriends.Web, :view
-  use Timex
   import Scrivener.HTML, except: [pagination_links: 2]
 
   def pagination_links(page, opts) do

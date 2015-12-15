@@ -40,3 +40,5 @@ config :elixir_friends, ElixirFriends.Repo,
   database: "elixir_friends_dev",
   hostname: "localhost",
   pool_size: 10
+
+import_config "dev.secret.exs"
