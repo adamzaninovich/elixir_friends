@@ -6,7 +6,7 @@ defmodule ElixirFriends.ImageTweetStreamer do
   def stream(search_term) do
     ExTwitter.stream_filter(track: search_term)
     |> Stream.filter(&has_images?/1)
-    |> Stream.map(&store_tweet/1)
+    |> Stream.map(&handle_tweet/1)
   end
 
   defp has_images?(tweet) do
@@ -19,13 +19,14 @@ defmodule ElixirFriends.ImageTweetStreamer do
     |> Enum.filter(&(&1.type == "photo"))
   end
 
-  defp store_tweet(tweet) do
-    %Post{
+  defp handle_tweet(tweet) do
+    post = %Post{
       image_url: first_photo(tweet).media_url,
       content: tweet.text,
       source_url: first_photo(tweet).expanded_url,
       username: tweet.user.screen_name }
     |> reject_existing
+    |> broadcast_post
     |> store_post
   end
 
@@ -42,6 +43,12 @@ defmodule ElixirFriends.ImageTweetStreamer do
       0 -> post
       _ -> nil
     end
+  end
+
+  defp broadcast_post(nil), do: nil
+  defp broadcast_post(post) do
+    ElixirFriends.Endpoint.broadcast!("posts:new", "new:post", post)
+    post
   end
 
   defp store_post(nil), do: nil

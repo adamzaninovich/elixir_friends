@@ -2,7 +2,7 @@ defmodule ElixirFriends.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "rooms:*", ElixirFriends.RoomChannel
+  channel "posts:*", ElixirFriends.PostChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket

@@ -1,43 +1,7 @@
 <div class="row">
   <div class="column">
     <h2>TSTweets</h2>
-    <h3><small><%= @page.page_size %> tweets / <%= @page.total_entries %> total</small></h3>
-
-    <%= pagination_links @page, next: "→", previous: "←", first: true, last: true %>
   </div>
 </div>
 
-<div class="row">
-  <div class="column">
-    <div class="ui grid">
-      <%= for post <- @page.entries do %>
-        <div class="four wide column">
-          <div class="ui cards">
-            <div class="ui card">
-              <div class="image">
-                <img src="<%= post.image_url %>" />
-              </div>
-              <div class="content">
-                <div class="header">
-                  <%= post.username %>
-                </div>
-                <div class="meta">
-                  <span class="date"><%= post.inserted_at %></span>
-                </div>
-                <div class="description">
-                  <%= post.content %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="column">
-    <%= pagination_links @page, next: "→", previous: "←", first: true, last: true %>
-  </div>
-</div>
+<div id="app" class="row"></div>

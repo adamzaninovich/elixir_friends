@@ -1,0 +1,21 @@
+{
+  "name": "elixir_friends",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Adam Zaninovich <adam.zaninovich@activenetwork.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/adamzaninovich/elixir_friends",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.14.3"
+  }
+}
