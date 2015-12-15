@@ -1,6 +1,8 @@
 # TS Tweets
 
-[![Build Status](https://semaphoreci.com/api/v1/projects/192d372c-4bae-47c8-bd4b-d01e6bd3aeab/633186/badge.svg)](https://semaphoreci.com/adamzaninovich/ts-tweets)
+https://ts-tweets.herokuapp.com/
+
+[![Build Status](https://semaphoreci.com/api/v1/projects/ea4bd92a-30c5-4ac7-b817-f659e60d7110/636176/badge.svg)](https://semaphoreci.com/adamzaninovich/ts-tweets)
 
 To start your Phoenix app:
 
