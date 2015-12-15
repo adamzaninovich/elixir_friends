@@ -12,9 +12,22 @@
   </head>
 
   <body>
-    <div class="ui grid container">
-      <%= @inner %>
-    </div> <!-- /container -->
+    <div class="ui container content-area">
+      <div class="ui masthead piled segments">
+        <div class="ui segment">
+          <h1 class="ui header">
+            <img class="ui mini circular image" src="/images/taylor.png">
+            TS Tweets
+            <div class="sub header">
+              Timely Taytay tweets
+            </div>
+          </h1>
+        </div>
+        <div class="ui segment">
+          <%= @inner %>
+        </div>
+      </div>
+    </div>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
