@@ -12,7 +12,6 @@ let PostList = React.createClass({
   },
   componentDidMount() {
     $.get(this.props.source, result => {
-      result = JSON.parse(result)
       this.setState({
         posts: result.entries
       })

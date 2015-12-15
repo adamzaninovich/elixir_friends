@@ -3,6 +3,5 @@ defmodule ElixirFriends.API.PostView do
 
   def render("index.json", %{page: page}) do
     page
-    |> Poison.encode!
   end
 end

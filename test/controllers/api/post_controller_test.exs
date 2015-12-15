@@ -22,8 +22,9 @@ defmodule ElixirFriends.API.PostControllerTest do
       total_entries: 1,
       page_size: 20,
       page_number: 1,
-      entries: [post]
-    } |> Poison.encode!
+      entries: [post] }
+    |> Poison.encode!
+    |> Poison.Parser.parse!
 
     assert json_response(conn, 200) == expected_response
   end
