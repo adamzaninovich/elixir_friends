@@ -1,7 +1,7 @@
-defmodule ElixirFriends.API.PostController do
-  use ElixirFriends.Web, :controller
+defmodule Tay.API.PostController do
+  use Tay.Web, :controller
 
-  alias ElixirFriends.Post
+  alias Tay.Post
 
   plug :scrub_params, "post" when action in [:create, :update]
 

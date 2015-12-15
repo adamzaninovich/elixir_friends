@@ -1,6 +1,6 @@
-defmodule ElixirFriends.API.PostControllerTest do
-  use ElixirFriends.ConnCase
-  alias ElixirFriends.Post
+defmodule Tay.API.PostControllerTest do
+  use Tay.ConnCase
+  alias Tay.Post
 
   setup do
     conn = conn |> put_req_header("accept", "application/json")
@@ -13,7 +13,7 @@ defmodule ElixirFriends.API.PostControllerTest do
       content: "This is some content",
       username: "example",
       source_url: "http://example.com" }
-    |> ElixirFriends.Repo.insert!
+    |> Tay.Repo.insert!
 
     conn = get(conn, "/api/posts")
 

@@ -1,4 +1,4 @@
-defmodule ElixirFriends.ChannelCase do
+defmodule Tay.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -20,19 +20,19 @@ defmodule ElixirFriends.ChannelCase do
       # Import conveniences for testing with channels
       use Phoenix.ChannelTest
 
-      alias ElixirFriends.Repo
+      alias Tay.Repo
       import Ecto.Model
       import Ecto.Query, only: [from: 2]
 
 
       # The default endpoint for testing
-      @endpoint ElixirFriends.Endpoint
+      @endpoint Tay.Endpoint
     end
   end
 
   setup tags do
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(ElixirFriends.Repo, [])
+      Ecto.Adapters.SQL.restart_test_transaction(Tay.Repo, [])
     end
 
     :ok

@@ -1,7 +1,7 @@
-defmodule ElixirFriends.ImageTweetStreamer do
+defmodule Tay.ImageTweetStreamer do
   import Ecto.Query, only: [from: 2]
-  alias ElixirFriends.Post
-  alias ElixirFriends.Repo
+  alias Tay.Post
+  alias Tay.Repo
 
   def stream(search_term) do
     ExTwitter.stream_filter(track: search_term)
@@ -47,7 +47,7 @@ defmodule ElixirFriends.ImageTweetStreamer do
 
   defp broadcast_post(nil), do: nil
   defp broadcast_post(post) do
-    ElixirFriends.Endpoint.broadcast!("posts:new", "new:post", post)
+    Tay.Endpoint.broadcast!("posts:new", "new:post", post)
     post
   end
 

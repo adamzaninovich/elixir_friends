@@ -1,5 +1,5 @@
-defmodule ElixirFriends.API.PostView do
-  use ElixirFriends.Web, :view
+defmodule Tay.API.PostView do
+  use Tay.Web, :view
 
   def render("index.json", %{page: page}) do
     page

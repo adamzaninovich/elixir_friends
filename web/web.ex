@@ -1,12 +1,12 @@
-defmodule ElixirFriends.Web do
+defmodule Tay.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use ElixirFriends.Web, :controller
-      use ElixirFriends.Web, :view
+      use Tay.Web, :controller
+      use Tay.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -29,11 +29,11 @@ defmodule ElixirFriends.Web do
     quote do
       use Phoenix.Controller
 
-      alias ElixirFriends.Repo
+      alias Tay.Repo
       import Ecto.Model
       import Ecto.Query, only: [from: 1, from: 2]
 
-      import ElixirFriends.Router.Helpers
+      import Tay.Router.Helpers
     end
   end
 
@@ -47,7 +47,7 @@ defmodule ElixirFriends.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import ElixirFriends.Router.Helpers
+      import Tay.Router.Helpers
     end
   end
 
@@ -61,7 +61,7 @@ defmodule ElixirFriends.Web do
     quote do
       use Phoenix.Channel
 
-      alias ElixirFriends.Repo
+      alias Tay.Repo
       import Ecto.Model
       import Ecto.Query, only: [from: 1, from: 2]
     end

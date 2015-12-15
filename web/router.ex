@@ -1,5 +1,5 @@
-defmodule ElixirFriends.Router do
-  use ElixirFriends.Web, :router
+defmodule Tay.Router do
+  use Tay.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,13 +13,13 @@ defmodule ElixirFriends.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", ElixirFriends do
+  scope "/", Tay do
     pipe_through :browser
 
     get "/", PageController, :index
   end
 
-  scope "/api", ElixirFriends do
+  scope "/api", Tay do
     pipe_through :api
 
     resources "/posts", API.PostController, only: [:index]

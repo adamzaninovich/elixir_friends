@@ -1,14 +1,14 @@
-defmodule ElixirFriends.Endpoint do
-  use Phoenix.Endpoint, otp_app: :elixir_friends
+defmodule Tay.Endpoint do
+  use Phoenix.Endpoint, otp_app: :tay
 
-  socket "/socket", ElixirFriends.UserSocket
+  socket "/socket", Tay.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :elixir_friends, gzip: false,
+    at: "/", from: :tay, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -32,8 +32,8 @@ defmodule ElixirFriends.Endpoint do
 
   plug Plug.Session,
     store: :cookie,
-    key: "_elixir_friends_key",
+    key: "_tay_key",
     signing_salt: "jMi6jIAi"
 
-  plug ElixirFriends.Router
+  plug Tay.Router
 end

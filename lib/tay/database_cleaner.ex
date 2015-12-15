@@ -1,11 +1,11 @@
-defmodule ElixirFriends.DatabaseCleaner do
+defmodule Tay.DatabaseCleaner do
   @moduledoc """
   Deletes all but last 100 posts form the DB every 5 minutes
   """
   use GenServer
   import Ecto.Query, only: [from: 2]
-  alias ElixirFriends.Post
-  alias ElixirFriends.Repo
+  alias Tay.Post
+  alias Tay.Repo
   require Logger
 
   def start_link do

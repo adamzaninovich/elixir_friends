@@ -1,3 +1,3 @@
-defmodule ElixirFriends.PageView do
-  use ElixirFriends.Web, :view
+defmodule Tay.PageView do
+  use Tay.Web, :view
 end

@@ -1,5 +1,5 @@
-defmodule ElixirFriends.ErrorView do
-  use ElixirFriends.Web, :view
+defmodule Tay.ErrorView do
+  use Tay.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"

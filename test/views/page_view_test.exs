@@ -1,3 +1,3 @@
-defmodule ElixirFriends.PageViewTest do
-  use ElixirFriends.ConnCase, async: true
+defmodule Tay.PageViewTest do
+  use Tay.ConnCase, async: true
 end

@@ -1,12 +1,12 @@
 {
-  "name": "elixir_friends",
+  "name": "tay",
   "description": "",
   "main": "",
   "authors": [
     "Adam Zaninovich <adam.zaninovich@activenetwork.com>"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/adamzaninovich/elixir_friends",
+  "homepage": "https://github.com/adamzaninovich/ts-tweets",
   "private": true,
   "ignore": [
     "**/.*",

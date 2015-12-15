@@ -1,5 +1,5 @@
-defmodule ElixirFriends.Post do
-  use ElixirFriends.Web, :model
+defmodule Tay.Post do
+  use Tay.Web, :model
 
   schema "posts" do
     field :image_url, :string
@@ -35,7 +35,7 @@ defmodule ElixirFriends.Post do
   end
 end
 
-defimpl Poison.Encoder, for: ElixirFriends.Post do
+defimpl Poison.Encoder, for: Tay.Post do
   def encode(post, _options) do
     post
     |> Map.take([:image_url, :content, :source_url, :username, :inserted_at])

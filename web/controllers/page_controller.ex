@@ -1,5 +1,5 @@
-defmodule ElixirFriends.PageController do
-  use ElixirFriends.Web, :controller
+defmodule Tay.PageController do
+  use Tay.Web, :controller
 
   def index(conn, _params) do
     render conn, "index.html"

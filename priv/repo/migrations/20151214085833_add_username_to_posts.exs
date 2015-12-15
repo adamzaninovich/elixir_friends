@@ -1,4 +1,4 @@
-defmodule ElixirFriends.Repo.Migrations.AddUsernameToPosts do
+defmodule Tay.Repo.Migrations.AddUsernameToPosts do
   use Ecto.Migration
 
   def change do
