@@ -7,26 +7,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ElixirFriends!</title>
+    <title>TS Tweets</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
     <div class="ui container content-area">
-      <div class="ui masthead piled segments">
-        <div class="ui segment">
-          <h1 class="ui header">
-            <img class="ui mini circular image" src="/images/taylor.png">
-            TS Tweets
-            <div class="sub header">
-              Timely Taytay tweets
-            </div>
-          </h1>
-        </div>
-        <div class="ui segment">
-          <%= @inner %>
-        </div>
-      </div>
+      <%= @inner %>
     </div>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>

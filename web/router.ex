@@ -16,8 +16,7 @@ defmodule ElixirFriends.Router do
   scope "/", ElixirFriends do
     pipe_through :browser
 
-    get "/", PostController, :index
-    resources "/posts", PostController
+    get "/", PageController, :index
   end
 
   scope "/api", ElixirFriends do
