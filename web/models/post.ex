@@ -10,9 +10,6 @@ defmodule Tay.Post do
     timestamps
   end
 
-  @required_fields ~w(image_url content source_url)
-  @optional_fields ~w()
-
   @doc """
   Creates a changeset based on the `model` and `params`.
 
@@ -21,17 +18,11 @@ defmodule Tay.Post do
   """
   def changeset(model, params \\ :empty) do
     model
-    |> cast(params, @required_fields, @optional_fields)
+    |> cast(params, ~w(image_url content source_url), [])
   end
 
   def sorted(query) do
-    from p in query,
-    order_by: [desc: p.inserted_at]
-  end
-
-  def limit(query, number \\ 10) do
-    from p in query,
-    limit: ^number
+    from p in query, order_by: [desc: p.inserted_at]
   end
 end
 
