@@ -20,7 +20,7 @@ defmodule ElixirFriends.ImageTweetStreamer do
   end
 
   defp handle_tweet(tweet) do
-    post = %Post{
+    %Post{
       image_url: first_photo(tweet).media_url,
       content: tweet.text,
       source_url: first_photo(tweet).expanded_url,
