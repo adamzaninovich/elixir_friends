@@ -17,3 +17,9 @@ config :elixir_friends, ElixirFriends.Repo,
   database: "elixir_friends_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :extwitter, :oauth,
+  consumer_key: "",
+  consumer_secret: "",
+  access_token: "",
+  access_token_secret: ""
