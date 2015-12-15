@@ -13,7 +13,7 @@ defmodule ElixirFriends.DatabaseCleaner do
   end
 
   def init(state) do
-    send(self, :delete_some_posts)
+    Process.send_after(self, :delete_some_posts, 15 * 1000)
     {:ok, state}
   end
 
